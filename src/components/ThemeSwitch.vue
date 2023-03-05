@@ -2,7 +2,7 @@
   <div>
     <button
       @click="toggleDark()"
-      class="rounded bg-green-500 py-1 px-4 text-white transition-colors duration-75 hover:bg-green-700"
+      class="mb-5 rounded bg-green-500 py-1 px-4 text-white transition-colors duration-75 hover:bg-green-700"
     >
       <MoonIcon class="inline-block h-5 w-5 align-middle" v-if="isDark" />
       <SunIcon class="inline-block h-5 w-5 align-middle" v-else />
