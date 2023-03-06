@@ -1,6 +1,8 @@
 <template>
   <header>
-    <nav class="container mx-auto flex items-center justify-between p-5">
+    <nav
+      class="container mx-auto flex flex-wrap items-center justify-between p-5"
+    >
       <AppLogo />
       <ThemeSwitch />
     </nav>
