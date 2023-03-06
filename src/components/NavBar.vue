@@ -1,8 +1,10 @@
 <template>
-  <div class="container mx-auto flex items-center justify-between p-5">
-    <AppLogo />
-    <ThemeSwitch />
-  </div>
+  <header>
+    <nav class="container mx-auto flex items-center justify-between p-5">
+      <AppLogo />
+      <ThemeSwitch />
+    </nav>
+  </header>
 </template>
 
 <script setup lang="ts">

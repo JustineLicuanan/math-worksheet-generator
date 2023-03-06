@@ -1,11 +1,13 @@
 <template>
-  <div class="container mx-auto p-5">
+  <main class="container mx-auto p-5">
     <OperationButtons />
-  </div>
+    <WorkSheet />
+  </main>
 </template>
 
 <script setup lang="ts">
   import OperationButtons from "./OperationButtons.vue";
+  import WorkSheet from "./WorkSheet.vue";
 </script>
 
 <style scoped></style>
