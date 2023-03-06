@@ -3,7 +3,7 @@
     class="flex flex-col items-center justify-center gap-5 py-5"
     :class="worksheetStore.worksheets.value.length === 0 ? 'mt-24' : ''"
   >
-    <h2 class="text-lg">Choose an Arithmentic Operation:</h2>
+    <h2 class="text-lg">Choose an Arithmetic Operation:</h2>
     <div class="flex flex-wrap items-center justify-center gap-7">
       <button
         class="py-2"
