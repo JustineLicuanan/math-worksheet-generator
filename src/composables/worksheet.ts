@@ -20,7 +20,7 @@ export const useWorksheet = () => {
       case EOperations.MULTIPLICATION:
       case EOperations.DIVISION:
         currentOperation.value = operation;
-        worksheets.value.splice(0);
+        worksheets.value = [];
 
         for (let i = 0; i < count; i++) {
           const firstNum = Math.floor(Math.random() * (10 * maxDigit));
@@ -44,5 +44,9 @@ export const useWorksheet = () => {
     }
   };
 
-  return { EOperations, currentOperation, worksheets, generate };
+  const clear = () => {
+    worksheets.value = [];
+  };
+
+  return { EOperations, currentOperation, worksheets, generate, clear };
 };

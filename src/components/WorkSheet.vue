@@ -1,6 +1,6 @@
 <template>
   <div class="py-5">
-    <ul class="text-center text-3xl">
+    <ul class="text-center text-4xl">
       <li
         v-for="(worksheet, idx) in worksheetStore.worksheets.value"
         :key="idx + 1"
