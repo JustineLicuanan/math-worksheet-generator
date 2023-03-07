@@ -6,6 +6,9 @@
   "editor.codeActionsOnSave": [
     "source.fixAll.eslint"
   ],
+  "html-css-class-completion.remoteStyleSheets": [
+    "https://cdn.jsdelivr.net/npm/quasar@2.11.7/dist/quasar.prod.css", // Get updated at https://quasar.dev/start/umd#installation
+  ],
   "eslint.validate": [
     "javascript",
     "javascriptreact",
