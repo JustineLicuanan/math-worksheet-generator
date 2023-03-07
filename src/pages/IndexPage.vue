@@ -1,6 +1,6 @@
 <template>
   <q-page>
-    <h5 class="text-center">This is the INDEX page</h5>
+    <h4 class="text-center">Math Worksheet Generator</h4>
   </q-page>
 </template>
 
