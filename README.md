@@ -5,9 +5,11 @@ a math worksheet generator built with Vue.js and Quasar
 ## Install the dependencies
 
 ```bash
+pnpm i
+# or
 yarn
 # or
-npm install
+npm i
 ```
 
 ### Start the app in development mode (hot-code reloading, error reporting, etc.)
@@ -19,6 +21,8 @@ quasar dev
 ### Lint the files
 
 ```bash
+pnpm lint
+# or
 yarn lint
 # or
 npm run lint
