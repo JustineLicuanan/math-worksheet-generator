@@ -2,13 +2,21 @@
   <q-layout view="lHr LpR lFr">
 
     <q-header elevated class="bg-primary text-white">
-      <q-toolbar>
+      <q-toolbar class="bg-secondary">
+
         <q-toolbar-title>
-          <q-avatar>
-            <img src="https://cdn.quasar.dev/logo-v2/svg/logo-mono-white.svg">
-          </q-avatar>
-          JustMath
+          <span class="cursor-pointer">
+            JustMath
+          </span>
         </q-toolbar-title>
+
+        <q-toggle
+        v-model="$q.dark.isActive"
+        color="dark"
+        :icon="$q.dark.isActive ? 'dark_mode' : 'light_mode'"
+        :label="$q.dark.isActive ? 'Dark Mode' : 'Light Mode'"
+        @change="$q.dark.toggle"
+      />
       </q-toolbar>
     </q-header>
 
@@ -18,3 +26,21 @@
 
   </q-layout>
 </template>
+
+<script setup lang="ts">
+import { useQuasar } from 'quasar';
+import { onBeforeMount, watch } from 'vue';
+
+const $q = useQuasar();
+
+onBeforeMount(() => {
+  if ('color-scheme' in localStorage) {
+    $q.dark.set(JSON.parse(localStorage['color-scheme']));
+  }
+});
+
+watch(() => $q.dark.isActive, (val) => {
+  $q.dark.set(val);
+  localStorage.setItem('color-scheme', JSON.stringify(val));
+});
+</script>

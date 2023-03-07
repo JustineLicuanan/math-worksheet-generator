@@ -1,6 +1,6 @@
 <template>
-  <q-page class="row items-center justify-center">
-    <h2>This is the INDEX page</h2>
+  <q-page>
+    <h5 class="text-center">This is the INDEX page</h5>
   </q-page>
 </template>
 
