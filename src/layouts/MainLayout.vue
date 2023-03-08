@@ -29,18 +29,6 @@
 
 <script setup lang="ts">
 import { useQuasar } from 'quasar';
-import { onBeforeMount, watch } from 'vue';
 
 const $q = useQuasar();
-
-onBeforeMount(() => {
-  if ('color-scheme' in localStorage) {
-    $q.dark.set(JSON.parse(localStorage['color-scheme']));
-  }
-});
-
-watch(() => $q.dark.isActive, (val) => {
-  $q.dark.set(val);
-  localStorage.setItem('color-scheme', JSON.stringify(val));
-});
 </script>
