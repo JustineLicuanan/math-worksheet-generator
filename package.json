@@ -9,7 +9,11 @@
     "dev": "quasar dev",
     "build": "quasar build",
     "lint": "eslint --ext .js,.ts,.vue ./",
-    "commit": "git add . && git commit -m"
+    "commit": "git add . && git commit -m",
+    "np": "quasar new page -f ts-composition-setup",
+    "nc": "quasar n component -f ts-composition-setup",
+    "ns": "quasar n store"
+
   },
   "dependencies": {
     "pinia": "^2.0.11",

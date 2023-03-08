@@ -1,6 +1,7 @@
 import { store } from 'quasar/wrappers';
 import { createPinia } from 'pinia';
 import { Router } from 'vue-router';
+import { watch } from 'vue';
 
 /*
  * When adding new properties to stores, you should also
@@ -24,6 +25,19 @@ declare module 'pinia' {
 
 export default store((/* { ssrContext } */) => {
   const pinia = createPinia();
+
+  if ('piniaState' in localStorage) {
+    pinia.state.value = JSON.parse(localStorage.piniaState);
+  }
+
+  watch(
+    pinia.state,
+    (state) => {
+      // persist the whole state to the local storage whenever it changes
+      localStorage.setItem('piniaState', JSON.stringify(state));
+    },
+    { deep: true },
+  );
 
   // You can add Pinia plugins here
   // pinia.use(SomePiniaPlugin)

@@ -1,8 +1,6 @@
-// export interface Todo {
-//   id: number;
-//   content: string;
-// }
+import { EOperations } from 'src/stores/worksheet-store';
 
-// export interface Meta {
-//   totalCount: number;
-// }
+export interface IOperationBtns {
+  icon: string
+  operation: EOperations
+}
