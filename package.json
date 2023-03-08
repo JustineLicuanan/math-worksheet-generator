@@ -1,40 +1,42 @@
 {
   "name": "math-worksheet-generator",
   "version": "0.0.1",
+  "description": "a math worksheet generator built with Vue.js and Quasar",
+  "productName": "Math Worksheet Generator",
+  "author": "Justine Licuanan",
   "private": true,
   "scripts": {
-    "dev": "vite",
-    "build": "run-p type-check build-only",
-    "preview": "vite preview",
-    "build-only": "vite build",
-    "type-check": "vue-tsc --noEmit",
-    "lint": "eslint . --ext .vue,.js,.jsx,.cjs,.mjs,.ts,.tsx,.cts,.mts --fix --ignore-path .gitignore",
-    "format": "prettier --write src/",
-    "commit": "git add . && git commit -m"
+    "dev": "quasar dev",
+    "build": "quasar build",
+    "lint": "eslint --ext .js,.ts,.vue ./",
+    "commit": "git add . && git commit -m",
+    "np": "quasar new page -f ts-composition-setup",
+    "nc": "quasar n component -f ts-composition-setup",
+    "ns": "quasar n store"
+
   },
   "dependencies": {
-    "@heroicons/vue": "^2.0.16",
-    "@vueuse/core": "^9.13.0",
-    "vue": "^3.2.47"
+    "pinia": "^2.0.11",
+    "@quasar/extras": "^1.0.0",
+    "quasar": "^2.6.0",
+    "vue": "^3.0.0",
+    "vue-router": "^4.0.0"
   },
   "devDependencies": {
-    "@rushstack/eslint-patch": "^1.2.0",
-    "@types/node": "^18.14.2",
-    "@vitejs/plugin-vue": "^4.0.0",
-    "@vue/eslint-config-prettier": "^7.1.0",
-    "@vue/eslint-config-typescript": "^11.0.2",
-    "@vue/tsconfig": "^0.1.3",
-    "autoprefixer": "^10.4.13",
-    "cssnano": "^5.1.15",
-    "eslint": "^8.34.0",
-    "eslint-plugin-vue": "^9.9.0",
-    "npm-run-all": "^4.1.5",
-    "postcss": "^8.4.21",
-    "prettier": "^2.8.4",
-    "prettier-plugin-tailwindcss": "^0.2.4",
-    "tailwindcss": "^3.2.7",
-    "typescript": "~4.8.4",
-    "vite": "^4.1.4",
-    "vue-tsc": "^1.2.0"
+    "@typescript-eslint/eslint-plugin": "^5.10.0",
+    "@typescript-eslint/parser": "^5.10.0",
+    "eslint": "^8.10.0",
+    "eslint-plugin-vue": "^9.0.0",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-plugin-import": "^2.20.1",
+    "@types/node": "^12.20.21",
+    "@quasar/app-vite": "^1.0.0",
+    "autoprefixer": "^10.4.2",
+    "typescript": "^4.5.4"
+  },
+  "engines": {
+    "node": "^18 || ^16 || ^14.19",
+    "npm": ">= 6.13.4",
+    "yarn": ">= 1.21.1"
   }
 }

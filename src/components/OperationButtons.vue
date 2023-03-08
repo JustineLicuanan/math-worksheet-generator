@@ -1,45 +1,37 @@
 <template>
-  <section
-    class="flex flex-col items-center justify-center gap-5 py-5"
-    :class="worksheetStore.worksheets.value.length === 0 ? 'mt-24' : ''"
-  >
-    <h2 class="text-lg">Choose an Arithmetic Operation:</h2>
-    <div class="flex flex-wrap items-center justify-center gap-7">
-      <button
-        class="py-2"
-        @click="worksheetStore.generate(worksheetStore.EOperations.ADDITION)"
-      >
-        <PlusIcon class="inline-block h-6 w-6 align-middle" />
-      </button>
-      <button
-        class="py-2"
-        @click="worksheetStore.generate(worksheetStore.EOperations.SUBTRACTION)"
-      >
-        <MinusIcon class="inline-block h-6 w-6 align-middle" />
-      </button>
-      <button
-        class="py-2"
-        @click="
-          worksheetStore.generate(worksheetStore.EOperations.MULTIPLICATION)
-        "
-      >
-        <XMarkIcon class="inline-block h-6 w-6 align-middle" />
-      </button>
-      <button
-        class="py-2 px-5"
-        @click="worksheetStore.generate(worksheetStore.EOperations.DIVISION)"
-      >
-        <span class="text-2xl leading-none">÷</span>
-      </button>
-    </div>
-  </section>
-</template>
+  <h6 class="text-center">Choose an Arithmetic Operation:</h6>
+  <div class="row items-center justify-center">
+    <q-btn
+      v-for="(operationBtn, idx) in operationBtns"
+      :key="idx"
+      color="secondary"
+      :icon="operationBtn.icon"
+      class="q-mx-md"
+      @click="worksheetStore.generate(operationBtn.operation)"
+    />
+    <q-btn color="secondary" class="q-mx-md" @click="worksheetStore.generate(EOperations.DIVISION)">
+      <img src="../assets/baseline-divide-icon.svg" />
+    </q-btn>
+  </div>
+  </template>
 
 <script setup lang="ts">
-  import { MinusIcon, PlusIcon, XMarkIcon } from "@heroicons/vue/24/outline";
-  import { useWorksheet } from "@/composables/worksheet";
+import { EOperations, useWorksheetStore } from '../stores/worksheet-store';
+import { IOperationBtns } from './models';
 
-  const worksheetStore = useWorksheet();
+const worksheetStore = useWorksheetStore();
+const operationBtns: IOperationBtns[] = [
+  {
+    icon: 'add',
+    operation: EOperations.ADDITION,
+  },
+  {
+    icon: 'remove',
+    operation: EOperations.SUBTRACTION,
+  },
+  {
+    icon: 'close',
+    operation: EOperations.MULTIPLICATION,
+  },
+];
 </script>
-
-<style scoped></style>

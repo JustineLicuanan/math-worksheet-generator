@@ -1,44 +1,20 @@
 <template>
-  <div>
-    <NavBar />
-    <MainSection />
-  </div>
+  <router-view />
 </template>
 
 <script setup lang="ts">
-  import { onMounted, watch } from "vue";
-  import MainSection from "./components/MainSection.vue";
-  import NavBar from "./components/NavBar.vue";
-  import { useWorksheet } from "./composables/worksheet";
+import { useQuasar } from 'quasar';
+import { onBeforeMount, watch } from 'vue';
+import { useDark } from './composables/useDark';
 
-  const worksheetStore = useWorksheet();
+const $q = useQuasar();
+const dark = useDark();
 
-  onMounted(() => {
-    if ("currentOperation" in localStorage && "worksheets" in localStorage) {
-      worksheetStore.worksheets.value = JSON.parse(localStorage.worksheets);
-      worksheetStore.currentOperation.value = JSON.parse(
-        localStorage.currentOperation
-      );
-    }
-  });
+onBeforeMount(() => {
+  dark.get();
+});
 
-  watch(worksheetStore.currentOperation, () => {
-    localStorage.setItem(
-      "currentOperation",
-      JSON.stringify(worksheetStore.currentOperation.value)
-    );
-  });
-
-  watch(
-    worksheetStore.worksheets,
-    () => {
-      localStorage.setItem(
-        "worksheets",
-        JSON.stringify(worksheetStore.worksheets.value)
-      );
-    },
-    { deep: true }
-  );
+watch(() => $q.dark.isActive, (val) => {
+  dark.set(val);
+});
 </script>
-
-<style scoped></style>
