@@ -24,6 +24,22 @@
       <router-view />
     </q-page-container>
 
+    <footer class="text-center q-pt-xl">
+      <p>
+        &lt;/&gt; with ❤️ by
+        <a
+          href='//github.com/JustineLicuanan'
+          target='_blank'
+          rel='noopener noreferrer'
+          class="text-secondary"
+          style="text-decoration: none"
+        >
+          Justine Licuanan
+        </a>
+        &copy; {{ new Date().getFullYear() }}
+      </p>
+    </footer>
+
   </q-layout>
 </template>
 
