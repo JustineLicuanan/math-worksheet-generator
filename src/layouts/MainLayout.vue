@@ -24,7 +24,7 @@
       <router-view />
     </q-page-container>
 
-    <footer class="text-center q-pt-xl">
+    <footer class="text-center q-pt-xl q-mx-sm">
       <p>
         &lt;/&gt; with ❤️ by
         <a
